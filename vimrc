@@ -38,7 +38,16 @@ set incsearch
 
 set expandtab
 set sw=4
-set ts=4
+set ts=4 sts=4
+
+" Automatic settings for different filetypes
+if has("autocmd")
+    autocmd FileType make setlocal ts=8 sts=8 sw=8 noexpandtab
+    autocmd FileType html,xhtml,php setlocal ts=2 sts=2 sw=2 expandtab
+    autocmd FileType rst setlocal tw=80 formatoptions+=at
+
+    autocmd BufNewFile,BufNew *.rss,*.atom setfiletype xml
+endif
 
 " Edit or view files in same directory as current file
 cnoremap %% <C-R>=expand('%:h').'/'<cr>
