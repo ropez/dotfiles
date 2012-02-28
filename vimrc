@@ -2,6 +2,11 @@ set hidden
 nnoremap ' `
 nnoremap ` '
 
+nmap <C-h> 10h
+nmap <C-j> 10j
+nmap <C-k> 10k
+nmap <C-l> 10l
+
 let mapleader = ","
 
 set history=1000
