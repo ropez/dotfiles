@@ -47,12 +47,17 @@ if has("autocmd")
     autocmd FileType rst setlocal tw=80 formatoptions+=at
 
     autocmd BufNewFile,BufNew *.rss,*.atom setfiletype xml
+
+    autocmd BufWritePost .vimrc source $MYVIMRC
 endif
 
 " Edit or view files in same directory as current file
 cnoremap %% <C-R>=expand('%:h').'/'<cr>
 map <leader>e :edit %%
 map <leader>v :view %%
+
+" Map ,c to edit .vimrc
+nmap <leader>c :split $MYVIMRC<cr>
 
 " Open files with <leader>f
 map <leader>f :CommandTFlush<cr>\|:CommandT<cr>
