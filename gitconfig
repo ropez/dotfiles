@@ -1,10 +1,8 @@
 [alias]
-	br = branch
 	ci = commit
 	co = checkout
 	st = status
 	mt = mergetool
-	staged = diff --cached
 	amend = commit --amend
 	sp = stash pop
 	ss = stash show -p
