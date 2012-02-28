@@ -76,4 +76,11 @@ set winheight=999
 " Switch between the last two files
 nnoremap <leader><leader> <c-^>
 
+" Sudo write
+if executable('sudo') && executable('tee')
+  command! Swrite
+        \ execute 'w !sudo tee % > /dev/null' |
+        \ setlocal nomodified
+endif
+
 source ~/.vimrc.local
